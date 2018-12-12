@@ -2,20 +2,10 @@ package task3;
 
 public class CoffeeMachine {
     public static void main(String[] args) {
-                Americano americano = new Americano();
-        System.out.println(americano.makeDrink());
-
-        Doppio doppio = new Doppio();
-        System.out.println(doppio.makeDrink());
-
-        Espresso espresso = new Espresso();
-        System.out.println(espresso.makeDrink());
-
-        FlatWhite flatWhite = new FlatWhite();
-        System.out.println(flatWhite.makeDrink());
-
-        Latte latte = new Latte();
-        System.out.println(latte.makeDrink());
+        ICoffee[] drinks = {new Americano(), new Doppio(), new Espresso(), new FlatWhite(), new Latte() };
+        for (int i = 0; i < drinks.length; i++) {
+            System.out.println(drinks[i].makeDrink());
+        }
     }
 
     private String coffee = "coffee";
@@ -45,7 +35,5 @@ public class CoffeeMachine {
     public void setMilk(String milk) {
         this.milk = milk;
     }
-
-
 
 }
